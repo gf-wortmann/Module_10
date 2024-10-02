@@ -11,6 +11,7 @@ def write_words(word_count, file_name):
         for word in range(word_count):
             f.write(f'Какое-то слово №{word+1}\n')
             sleep(0.1)
+        print(f'Завершилась запись в файл {file_name}')
             
         
 start_time = datetime.now()
@@ -20,7 +21,7 @@ write_words(200, 'example3.txt')
 write_words(100, 'example4.txt')
 finish_time = datetime.now()
 time_spent_directly = finish_time - start_time
-print(f'Directly spent time: {time_spent_directly}')
+print(f'Время работы функций: {time_spent_directly}')
 
 
 start_time = datetime.now()
@@ -42,5 +43,5 @@ th_4.join()
 
 finish_time = datetime.now()
 time_spent_with_threads = finish_time - start_time
-print(f'Time spent with threads: {time_spent_with_threads}')
-print(f'Time ratio is: {time_spent_directly / time_spent_with_threads:.2f}')
+print(f'Время работы потоков: {time_spent_with_threads}')
+print(f'Время работы потоков меньше в {time_spent_directly / time_spent_with_threads:.2f} раза')
