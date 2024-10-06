@@ -46,7 +46,7 @@ class Cafe:
                 t = table.number
                 g = the_guests.pop()
                 table.set_guest(g)
-                print(f'{g.Name} сел за стол номер {t}')
+                print(f'{g.Name} сел(а) за стол номер {t}')
                 g.start()
         
         for guest in the_guests:
@@ -64,7 +64,7 @@ class Cafe:
         while not all_tables_free():
             for table in self.tables:
                 if not table.is_free() and not table.guest.is_alive():
-                    print(f'{table.guest.Name} покушал и ушёл')
+                    print(f'{table.guest.Name} покушал(а) и ушёл(ла)')
                     print(f'Стол №{table.number} свободен')
                     table.guest.join()
                     table.release()
@@ -74,7 +74,7 @@ class Cafe:
                     guest = self.queue.get()
                     table.set_guest(guest)
                     guest.start()
-                    print(f'{guest.Name} вышел из очереди и сел за стол номер {table.number}')
+                    print(f'{guest.Name} вышел(ла) из очереди и сел(а) за стол номер {table.number}')
 
 
 guests_names = [
